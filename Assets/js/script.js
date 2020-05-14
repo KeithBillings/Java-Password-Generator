@@ -18,25 +18,37 @@ function getRandomSymbol(){
 };
 
 // Creating an object array for the character creation functions
-
-var characterArr = {
+const characterFunctionArray = {
   lowercase: getRandomLowercase,
   uppercase: getRandomUppercase, 
   numbers: getRandomNumber,
   symbols: getRandomSymbol,
 };
 
-// Write Password to the #password input
-// function writePassword(){
-//   var password = generatePassword;
+// Setting elements aka the length input and the checkboxes 
+const lengthSetting = document.getElementById("length");
+const uppercaseSetting = document.getElementById("uppercase");
+const lowercaseSetting = document.getElementById("lowercase");
+const numbersSetting = document.getElementById("numbers");
+const symbolsSetting = document.getElementById("symbols");
 
-//   var passwordText = document.querySelector("#password");
-//   passwordText.value = password;
-// };
+// Function creating the password
+function generatePassword(){
+  return "test!";
+};
 
-
-
+// Writing Password On The Webpage
+//
 // Add event listener to generate button
 generateBtn.addEventListener("click", function(){
-  console.log("test click!");
+  // The password variable is now equal to the result of the function generating the password
+  password = generatePassword();
+  // Creating a variable that is choosing the text area the user will see
+  var passwordText = document.querySelector("#password");
+  // Putting the actual password into the text area
+  passwordText.value = password;
 });
+
+
+// Testing things with console.log 
+// console.log(characterFunctionArray.lowercase());
