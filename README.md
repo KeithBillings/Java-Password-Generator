@@ -11,7 +11,7 @@ In this assignment I was tasked with writing a section of javascript code that w
 ## Changes Made
 
 * I first pushed the homework files from the school folder. 
-* First thing's first, I changed the background to be more appealing 
+* I changed the background to be more appealing :)
 * Then I created check boxes with labels for each of the password settings
 * Write functions that will generate random characters of uppercase letters, lowercase, numbers, and symbols using character codes and math.random
 * Build an array that stores the character generation functions
@@ -19,7 +19,8 @@ In this assignment I was tasked with writing a section of javascript code that w
 
 ## Built With
 
-* 
+* local CSS stylesheet
+* local javascript file
 
 ## Author
 
