@@ -40,9 +40,19 @@ function generatePassword(){
   var userLowercaseInput = lowercaseSetting.checked;
   var userNumbersInput = numbersSetting.checked;
   var userSymbolsInput = symbolsSetting.checked;
-  
+  // Making a variable to house the different types of input settings
+  const typesCount = userUppercaseInput + userLowercaseInput + userNumbersInput + userSymbolsInput;
 
-  // return typeof userSymbolsInput;
+  console.log(typesCount);
+  // Making an array that will filter out the unchecked boxes
+  const typesArray = [{userUppercaseInput}, {userLowercaseInput}, {userNumbersInput}, {userSymbolsInput}].filter(item => Object.values(item)[0]);
+
+  console.log(typesArray);
+
+  if(typesCount === 0){
+    return "Please select an option.";
+  }
+
 };
 
 // Writing Password On The Webpage
