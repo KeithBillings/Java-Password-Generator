@@ -34,7 +34,15 @@ const symbolsSetting = document.getElementById("symbols");
 
 // Function creating the password
 function generatePassword(){
-  return "test!";
+  // Getting the values of the user's input of preferred settings
+  var userLengthInput = +lengthSetting.value;
+  var userUppercaseInput = uppercaseSetting.checked;
+  var userLowercaseInput = lowercaseSetting.checked;
+  var userNumbersInput = numbersSetting.checked;
+  var userSymbolsInput = symbolsSetting.checked;
+  
+
+  // return typeof userSymbolsInput;
 };
 
 // Writing Password On The Webpage
