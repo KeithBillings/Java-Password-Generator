@@ -72,7 +72,3 @@ function getRandomSymbol(){
   var symbols = "!@#$%^&*()[]=<>.,/";
   return symbols[Math.floor(Math.random() * symbols.length)];
 };
-
-
-// Testing things with console.log 
-// console.log(characterFunctionObj.lowercase());
