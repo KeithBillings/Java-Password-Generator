@@ -8,6 +8,10 @@ In this assignment I was tasked with writing a section of javascript code that w
 
 * https://keithbillings.github.io/Java-Password-Generator/
 
+## Screenshot
+
+![Alt text](Assets\images\Screenshot.png?raw=true "Screenshot")
+
 ## What I Did
 
 * I first pushed the homework files from the school folder. 
