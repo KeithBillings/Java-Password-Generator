@@ -17,6 +17,20 @@ const characterFunctionObj = {
   symbol: getRandomSymbol,
 };
 
+// Functions to shuffle the password characters, otherwise the pattern of the password would be upper, lower, number, symbol
+function shuffle(string){
+  var a = string.split(""),
+      n = a.length;
+
+  for(var i = n - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temporary = a[i];
+      a[i] = a[j];
+      a[j] = temporary;
+  }
+  return a.join("");
+};
+
 // When the "Generate" button is clicked, this will run
 generate.addEventListener("click", () => {
   // Getting the values of the user's input of preferred settings
@@ -26,7 +40,7 @@ generate.addEventListener("click", () => {
   const userNumbersInput = numbersSetting.checked;
   const userSymbolsInput = symbolsSetting.checked;
 
-  // Writing the password to the text area using said preferances 
+  // Writing the password to the text area using the result returned from the generatePassword function
   password.innerText = generatePassword(userUppercaseInput, userLowercaseInput, userNumbersInput, userSymbolsInput, userLengthInput);
 });
 
@@ -38,19 +52,22 @@ function generatePassword(upper, lower, number, symbol, length){
   const typesCount = upper + lower + number + symbol;
   // Making an array that will filter out the unchecked boxes
   const typesArray = [{upper}, {lower}, {number}, {symbol}].filter(item => Object.values(item)[0]);
-
   // Return Statement in text area if no setting is selected
   if(typesCount === 0){
     return "Please select an option.";
   };
-  // Creating a loop that will 
+  // Creating a loop that will pull from the object contaning the character-creating functions
   for(let i = 0; i < length; i += typesCount){
     typesArray.forEach(type => {
       const funcName = Object.keys(type)[0];
       generatedPassword += characterFunctionObj[funcName]();
     });
   }
-  const finalPassword = generatedPassword.slice(0, length);
+  // Using the user's selected length preference
+  generatedPassword.slice(0, length);
+  // Shuffling the password
+  const finalPassword = shuffle(generatedPassword);
+  // End function with a value that we will use to print to the text area
   return finalPassword;
 };
 
