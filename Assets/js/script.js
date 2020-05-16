@@ -52,9 +52,17 @@ function generatePassword(upper, lower, number, symbol, length){
   const typesCount = upper + lower + number + symbol;
   // Making an array that will filter out the unchecked boxes
   const typesArray = [{upper}, {lower}, {number}, {symbol}].filter(item => Object.values(item)[0]);
-  // Return Statement in text area if no setting is selected
+  // Return Statement in text area if no setting (uppercase, lowercase, number, symbols) is selected
   if(typesCount === 0){
     return "Please select an option.";
+  };
+  // Return a statement if password is too long.
+  if(lengthSetting.value > 128){
+    return "Password length is too long. Please select a length between 8 and 128.";
+  };
+  // Return a statement if password is too short.
+  if(lengthSetting.value < 8){
+    return "Password length is too short. Please select a length between 8 and 128.";
   };
   // Creating a loop that will pull from the object contaning the character-creating functions
   for(let i = 0; i < length; i += typesCount){
@@ -62,7 +70,7 @@ function generatePassword(upper, lower, number, symbol, length){
       const funcName = Object.keys(type)[0];
       generatedPassword += characterFunctionObj[funcName]();
     });
-  }
+  };
   // Using the user's selected length preference
   generatedPassword.slice(0, length);
   // Shuffling the password
