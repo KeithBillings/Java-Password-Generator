@@ -1,6 +1,4 @@
 // Assignment Code
-  // Generate button
-  const generateBtn = document.getElementById("generate");
   // Text Area the password will write to
   const password = document.getElementById("password");
   // Length input 8-128
