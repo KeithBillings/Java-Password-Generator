@@ -10,7 +10,7 @@ In this assignment I was tasked with writing a section of javascript code that w
 
 ## Screenshot
 
-![image](Assets\images\Screenshot.png?raw=true "Screenshot")
+![Screenshot](/Assets/images/Screenshot.png)
 
 ## What I Did
 
