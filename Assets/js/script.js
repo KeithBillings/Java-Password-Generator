@@ -1,13 +1,15 @@
 // Assignment Code
-const generateBtn = document.getElementById("generate");
-const password = document.getElementById("password");
-
-// Length input and checkboxes 
-const lengthSetting = document.getElementById("length");
-const uppercaseSetting = document.getElementById("uppercase");
-const lowercaseSetting = document.getElementById("lowercase");
-const numbersSetting = document.getElementById("numbers");
-const symbolsSetting = document.getElementById("symbols");
+  // Generate button
+  const generateBtn = document.getElementById("generate");
+  // Text Area the password will write to
+  const password = document.getElementById("password");
+  // Length input 8-128
+  const lengthSetting = document.getElementById("length");
+  // Checkbox Settings
+  const uppercaseSetting = document.getElementById("uppercase");
+  const lowercaseSetting = document.getElementById("lowercase");
+  const numbersSetting = document.getElementById("numbers");
+  const symbolsSetting = document.getElementById("symbols");
 
 // Creating an object array for the character creation functions
 const characterFunctionObj = {  
