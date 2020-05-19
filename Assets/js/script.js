@@ -45,7 +45,7 @@ generate.addEventListener("click", () => {
 });
 
 // Function creating the password 
-function generatePassword(upper, lower, number, symbol, length){
+function generatePassword(upper, lower, number, symbol, userLengthInput){
   // Placeholder for password to manipulate
   let generatedPassword = "";
   // TypesCount is the number of checked boxes 0-4
@@ -65,16 +65,16 @@ function generatePassword(upper, lower, number, symbol, length){
     return "Password length is too short. Please select a length between 8 and 128.";
   };
   // Creating a loop that will pull from the object contaning the character-creating functions
-  for(let i = 0; i < length; i += typesCount){
+  for(let i = 0; i < userLengthInput; i += typesCount){
     typesArray.forEach(type => {
       const funcName = Object.keys(type)[0];
       generatedPassword += characterFunctionObj[funcName]();
     });
   };
   // Using the user's selected length preference
-  generatedPassword.slice(0, length);
+  const finalPassword = generatedPassword.slice(0, userLengthInput);
   // Shuffling the password
-  const finalPassword = shuffle(generatedPassword);
+  shuffle(finalPassword);
   // End function with a value that we will use to print to the text area
   return finalPassword;
 };
